@@ -6,4 +6,4 @@ CREATE TABLE IF NOT EXISTS dns_entry (
 
 
 
-INSERT INTO dns_entry (domain, ip_address) VALUES ('google.com', '192.168.1.1');
+INSERT INTO dns_entry (domain, ip_address) VALUES ('google.com', '172.168.1.1');
