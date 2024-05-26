@@ -20,7 +20,7 @@ public class DnsController {
     ) {
         Optional<String> ipAddress = dnsService.resolveDomain(domain);
         return ipAddress.map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.status(404).body("Domain not found"));
+            .orElseGet(() -> ResponseEntity.status(404).body(domain));
     }
 
 }

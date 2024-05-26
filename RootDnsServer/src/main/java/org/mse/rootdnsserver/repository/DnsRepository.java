@@ -9,3 +9,4 @@ public interface DnsRepository extends JpaRepository<DnsEntry, Long> {
     Optional<DnsEntry> findByDomain(String domain);
 }
 
+
