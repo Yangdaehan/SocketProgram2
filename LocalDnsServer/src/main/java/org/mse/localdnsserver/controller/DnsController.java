@@ -1,0 +1,25 @@
+package org.mse.localdnsserver.controller;
+
+import org.mse.localdnsserver.service.DnsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/dns")
+public class DnsController {
+    @Autowired
+    private DnsService dnsService;
+
+    @GetMapping("/resolve")
+    public ResponseEntity<String> resolveDomain(
+        @RequestParam String domain
+    ) {
+        Optional<String> ipAddress = dnsService.resolveDomain(domain);
+        return ipAddress.map(ResponseEntity::ok)
+            .orElseGet(() -> ResponseEntity.status(404).body("Domain not found"));
+    }
+
+}
