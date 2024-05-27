@@ -1,5 +1,6 @@
 package org.mse.localdnsserver.service;
 
+import java.util.List;
 import org.mse.localdnsserver.model.DnsEntry;
 import org.mse.localdnsserver.repository.DnsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,10 @@ public class DnsService {
         DnsEntry dnsEntry
     ) {
         return dnsRepository.save(dnsEntry);
+    }
+
+
+    public List<DnsEntry> getAllDomains() {
+        return dnsRepository.findAll();
     }
 }

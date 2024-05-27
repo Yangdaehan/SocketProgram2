@@ -1,5 +1,6 @@
 package org.mse.localdnsserver.controller;
 
+import java.util.List;
 import org.mse.localdnsserver.model.DnsEntry;
 import org.mse.localdnsserver.service.DnsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,14 @@ import java.util.Optional;
 @RequestMapping("/dns")
 public class DnsController {
 
+
     @Autowired
     private DnsService dnsService;
 
     public DnsController(DnsService dnsService) {
         this.dnsService = dnsService;
     }
+
 
     @GetMapping("/resolve")
     public ResponseEntity<String> resolveDomain(
@@ -29,12 +32,19 @@ public class DnsController {
             .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error:domain not found"));
     }
 
+
     @PostMapping("/register")
     public ResponseEntity<DnsEntry> registerDomain(
         @RequestBody DnsEntry dnsEntry
     ) {
         DnsEntry savedEntry = dnsService.registerDomain(dnsEntry);
         return ResponseEntity.ok(savedEntry);
+    }
+
+
+    @GetMapping("/domains")
+    public ResponseEntity<List<DnsEntry>> getAllDomains() {
+        return ResponseEntity.ok(dnsService.getAllDomains());
     }
 
 }
