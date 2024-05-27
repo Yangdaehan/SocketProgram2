@@ -15,6 +15,10 @@ public class DnsEntry {
     private String ipAddress;
 
 
+    public String getDomain() {
+        return domain;
+    }
+
     public String getIpAddress() {
         return ipAddress;
     }

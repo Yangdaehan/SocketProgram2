@@ -1,5 +1,6 @@
 package org.mse.rootdnsserver.service;
 
+import java.util.List;
 import org.mse.rootdnsserver.model.DnsEntry;
 import org.mse.rootdnsserver.repository.DnsRepository;
 import org.slf4j.Logger;
@@ -14,9 +15,11 @@ public class DnsService {
     private static final Logger logger = LoggerFactory.getLogger(DnsService.class);
     private final DnsRepository dnsRepository;
 
+
     public DnsService(DnsRepository dnsRepository) {
         this.dnsRepository = dnsRepository;
     }
+
 
     public Optional<String> resolveDomain(String domain) {
         logger.info("Resolving domain: {}", domain);
@@ -29,6 +32,11 @@ public class DnsService {
             logger.warn("Domain {} not found", domain);
             return Optional.empty();
         }
+    }
+
+
+    public List<DnsEntry> getAllDomains() {
+        return dnsRepository.findAll();
     }
 
 }
