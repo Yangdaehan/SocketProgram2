@@ -14,13 +14,6 @@ public class DnsEntry {
     private String domain;
     private String ipAddress;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDomain() {
         return domain;

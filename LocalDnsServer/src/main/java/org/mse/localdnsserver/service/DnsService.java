@@ -19,7 +19,9 @@ public class DnsService {
 
     private final String rootDnsServerUrl = "http://localhost:8081/dns/resolve?domain=";
 
-    public Optional<String> resolveDomain(String domain) {
+    public Optional<String> resolveDomain(
+        String domain
+    ) {
         Optional<DnsEntry> dnsEntryOptional = dnsRepository.findByDomain(domain);
         if (dnsEntryOptional.isPresent()) {
             return Optional.of(dnsEntryOptional.get().getIpAddress());
@@ -43,6 +45,9 @@ public class DnsService {
     }
 
 
-
-
+    public DnsEntry registerDomain(
+        DnsEntry dnsEntry
+    ) {
+        return dnsRepository.save(dnsEntry);
+    }
 }
