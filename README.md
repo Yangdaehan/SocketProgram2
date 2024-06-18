@@ -54,3 +54,9 @@ POST 요청을 보낸 후 list를 확인해보면 저장 된 것을 확인할 �
 <img width="1046" alt="스크린샷 2024-05-27 오후 8 25 22" src="https://github.com/Yangdaehan/socketServer3/assets/68599095/8a9e8235-d0be-4786-bca4-27fd1878557f">
 
 
+
+## API 명세서
+
+
+[API 명세서](https://documenter.getpostman.com/view/31445434/2sA3XSBMC5)
+
