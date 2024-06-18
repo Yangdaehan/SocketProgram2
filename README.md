@@ -1,4 +1,4 @@
-# socketServer2
+# SocketProgram2
 
 가상의 local DNS 서버와 root DNS 서버, 두 단계 DNS 서버를 구현
 
