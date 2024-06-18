@@ -1,4 +1,4 @@
-# socketServer3
+# socketServer2
 
 가상의 local DNS 서버와 root DNS 서버, 두 단계 DNS 서버를 구현
 
@@ -7,8 +7,8 @@
 * 만약 Local DNS 서버에 해당 IP주소가 없다면 상위(root) DNS 서버에 문의 함
 * 상위 DNS 서버에도 그 해당 주소가 없다면 에러 메시지 발생
 * 클라이언트에서는 도메인 이름과 ip 주소를 등록할 수도 있음
-
-
+&nbsp;
+&nbsp;
 ## 구현 설명
 
 클라이언트 => local DNS 서버 => root DNS 서버 => local DNS 서버 => 클라이언트
@@ -21,8 +21,8 @@ Root DNS 서버  = localhost:8081
 ```
 
 포트 번호를 다르게 하여 로컬 DNS 서버에 도메인이 없을 경우 루트 DNS 서버에 문의하여 해당 도메인을 찾고 이를 반환하게 하였습니다.
-
-
+&nbsp;
+&nbsp;
 
 ## 구현 예시
 
@@ -53,8 +53,8 @@ Root DNS 서버  = localhost:8081
 POST 요청을 보낸 후 list를 확인해보면 저장 된 것을 확인할 수 있습니다. "google.com"의 경우 루트 DNS 서버에서 가져 온 후 저장하였기 때문에 출력되어집니다.
 <img width="1046" alt="스크린샷 2024-05-27 오후 8 25 22" src="https://github.com/Yangdaehan/socketServer3/assets/68599095/8a9e8235-d0be-4786-bca4-27fd1878557f">
 
-
-
+&nbsp;
+&nbsp;
 ## API 명세서
 
 
